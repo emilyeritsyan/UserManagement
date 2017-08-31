@@ -1,0 +1,23 @@
+UserBundle\Entity\Userpermission:
+    type: entity
+    table: userpermission
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        permissionId:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: permission_id
+        userId:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: user_id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,24 @@
+UserBundle\Entity\Groups:
+    type: entity
+    table: groups
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 55
+            fixed: false
+        permissionId:
+            type: string
+            nullable: true
+            length: 55
+            fixed: false
+            column: permission_id
+    lifecycleCallbacks: {  }

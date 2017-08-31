@@ -1,0 +1,44 @@
+group_add:
+    path:  /groups
+    defaults: { _controller: UserBundle:Groups:add}
+    methods: [POST]
+    
+group_delete:
+    path:  /groups/{groupname}
+    defaults: { _controller: UserBundle:Groups:delete}
+    methods: [DELETE]
+    requirements: {groupname: "[A-Za-z0-9_]+" }
+        
+remove_users_from_group:
+    path:  /groups
+    defaults: { _controller: UserBundle:User:removeUserFromGroup}
+    methods: [DELETE]
+    
+remove_all_users_from_group:
+    path:  /groups/users/{groupname}
+    defaults: { _controller: UserBundle:User:removeAllUsersFromGroup}
+    methods: [DELETE]
+    requirements: {groupname: "[A-Za-z0-9_]+" }
+
+user_get:
+   path:  /user/{username}
+   defaults: { _controller: UserBundle:User:get}
+   requirements: {username: "[A-Za-z0-9_]+" }
+   methods: [GET]
+
+user_add:
+   path:  /user
+   defaults: { _controller: UserBundle:User:add}
+   methods: [POST]
+
+user_delete:
+   path:  /user/{username}
+   defaults: { _controller: UserBundle:User:delete}
+   methods: [DELETE]
+   requirements: {username: "[A-Za-z0-9_]+" }
+        
+user_assign_group:
+   path:  /user
+   defaults: { _controller: UserBundle:User:assign}
+   methods: [PUT]
+
